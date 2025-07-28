@@ -12,11 +12,11 @@ jobs:
           fetch-depth: 0
       - name: Update Changelog
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git branch -b "sample"
           echo "## Changelog updated on $(date)" >> CHANGELOG.md
-          git add CHANGELOG.md
-          git commit -m "Update changelog"
+          git add .
+          git commit -m "Update!"
+          git push origin sample
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
