@@ -1,7 +1,8 @@
 name: Update Changelog
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 jobs:
   updateChangelog:
     runs-on: ubuntu-latest
